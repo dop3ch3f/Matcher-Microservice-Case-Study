@@ -31,25 +31,25 @@ class PropertyFactory extends Factory
                 $factoryFields = [];
                 foreach ($testFields as $field) {
                     if($field === 'area') {
-                        $factoryFields[] = '' .$this->faker->numberBetween(100,999). '';
+                        $factoryFields['area'] = '' .$this->faker->numberBetween(100,999). '';
                     }
                     if($field === 'yearOfConstruction') {
-                        $factoryFields[] = ''.$this->faker->numberBetween(1999,2022).'';
+                        $factoryFields['yearOfConstruction'] = '' .$this->faker->numberBetween(1999,2022).'';
                     }
                     if($field === 'rooms') {
-                        $factoryFields[] = ''.$this->faker->numberBetween(1,20).'';
+                        $factoryFields['rooms'] = ''.$this->faker->numberBetween(1,20).'';
                     }
                     if($field === 'heatingType') {
-                        $factoryFields[] = $this->faker->randomElement(['gas', 'electric']);
+                        $factoryFields['heatingType'] = $this->faker->randomElement(['gas', 'electric']);
                     }
                     if($field === 'parking') {
-                        $factoryFields[] = $this->faker->randomElement([true, false]);
+                        $factoryFields['parking'] = $this->faker->randomElement([true, false]);
                     }
                     if($field === 'returnActual') {
-                        $factoryFields[] = ''.$this->faker->randomFloat(1,10.5, 99.9).'';
+                        $factoryFields['returnActual'] = ''.$this->faker->randomFloat(1,10.5, 99.9).'';
                     }
                     if($field === 'rent') {
-                        $factoryFields[] = ''.$this->faker->numberBetween(1000,9999).'';
+                        $factoryFields['rent'] = ''.$this->faker->numberBetween(1000,9999).'';
                     }
                 }
                 return json_encode($factoryFields);
