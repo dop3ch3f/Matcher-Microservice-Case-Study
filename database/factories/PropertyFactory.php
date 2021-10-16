@@ -40,10 +40,10 @@ class PropertyFactory extends Factory
                         $factoryFields[] = ''.$this->faker->numberBetween(1,20).'';
                     }
                     if($field === 'heatingType') {
-                        $factoryFields[] = array_rand(['gas', 'electric']);
+                        $factoryFields[] = $this->faker->randomElement(['gas', 'electric']);
                     }
                     if($field === 'parking') {
-                        $factoryFields[] = array_rand([true, false]);
+                        $factoryFields[] = $this->faker->randomElement([true, false]);
                     }
                     if($field === 'returnActual') {
                         $factoryFields[] = ''.$this->faker->randomFloat(1,10.5, 99.9).'';
